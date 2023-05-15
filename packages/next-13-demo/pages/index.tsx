@@ -1,9 +1,18 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-// Import Stencil Component
-import { MyComponent, MyTextComponent } from "@matt/react-library";
+import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const MyComponent = dynamic(
+  () => import("@matt/react-library").then((mod) => mod.MyComponent),
+  { ssr: false }
+);
+
+const MyTextComponent = dynamic(
+  () => import("@matt/react-library").then((mod) => mod.MyTextComponent),
+  { ssr: false }
+);
 
 export default function Home() {
   return (
