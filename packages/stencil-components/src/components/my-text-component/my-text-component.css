@@ -1,0 +1,17 @@
+:host {
+  display: var(--display, inline-block);
+}
+
+:host(.text-block) {
+  display: var(--display, block);
+}
+
+.text {
+  margin: var(--margin, 10px);
+  padding: var(--padding, 10px);
+  display: var(--display);
+  color: inherit;
+  font-size: 72px;
+  font-weight: inherit;
+  line-height: var(--line-height, 1);
+}
